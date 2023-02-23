@@ -1,0 +1,81 @@
+import React from 'react'
+
+function Image({ id, name, url }) {
+    return <div className='flex flex-col justify-center items-center'>
+        <img id={id} src={url} alt="cat thumbnail" className='rounded-lg img-contain' />
+        <p className='mt-2'>{name}</p>
+    </div>
+}
+
+export default Image;
+
+
+
+
+// "Abyssinian",
+// "Aegean",
+// "American Bobtail",
+// "American Curl",
+// "American Shorthair",
+// "American Wirehair",
+// "Arabian Mau",
+// "Australian Mist",
+// "Balinese",
+// "Bambino",
+// "Bengal",
+// "Birman",
+// "Bombay",
+// "British Longhair",
+// "British Shorthair",
+// "Burmese",
+// "Burmilla",
+// "California Spangled",
+// "Chantilly-Tiffany",
+// "Chartreux",
+// "Chausie",
+// "Cheetoh",
+// "Colorpoint Shorthair",
+// "Cornish Rex",
+// "Cymric",
+// "Cyprus",
+// "Devon Rex",
+// "Donskoy",
+// "Dragon Li",
+// "Egyptian Mau",
+// "European Burmese",
+// "Exotic Shorthair",
+// "Havana Brown",
+// "Himalayan",
+// "Japanese Bobtail",
+// "Javanese",
+// "Khao Manee",
+// "Korat",
+// "Kurilian",
+// "LaPerm",
+// "Maine Coon",
+// "Malayan",
+// "Manx",
+// "Munchkin",
+// "Nebelung",
+// "Norwegian Forest Cat",
+// "Ocicat",
+// "Oriental",
+// "Persian",
+// "Pixie-bob",
+// "Ragamuffin",
+// "Ragdoll",
+// "Russian Blue",
+// "Savannah",
+// "Scottish Fold",
+// "Selkirk Rex",
+// "Siamese",
+// "Siberian",
+// "Singapura",
+// "Snowshoe",
+// "Somali",
+// "Sphynx",
+// "Tonkinese",
+// "Toyger",
+// "Turkish Angora",
+// "Turkish Van",
+// "York Chocolate"
