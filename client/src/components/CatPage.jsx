@@ -37,7 +37,7 @@ function CatPage() {
 
     return (
         <div className='py-4 md:px-8 md:py-10'>
-            <img className='rounded-md w-full md:px-8 rounded-md float-none md:float-left md:w-64' src={`https://cdn2.thecatapi.com/images/${imageId}.jpg`} />
+            <img className='rounded-md w-full md:px-8 rounded-md float-none md:float-left md:w-2/4' src={`https://cdn2.thecatapi.com/images/${imageId}.jpg`} />
             <div className='flex flex-col gap-4 py-8 md:py-0'>
                 <div>
                     <h1 className='font-bold md:text-lg'>Description</h1>

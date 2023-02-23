@@ -13,7 +13,7 @@ function CatList() {
 
     useEffect(() => {
         Axios.get("http://localhost:3000/cat-list")
-            .then(res=> {
+            .then(res => {
                 setCatData(() => [...res.data])
             })
     }, [])
@@ -27,7 +27,7 @@ function CatList() {
                     return
                 }
                 return <div key={catDatum.id} id={catDatum.id} className="masonry-item cat-image">
-                    <Link to={'/cat-page'} state={{dataset: catDatum}}>
+                    <Link to={'/cat-page'} state={{ dataset: catDatum }}>
                         <img className='rounded-md' src={`https://cdn2.thecatapi.com/images/${catDatum.reference_image_id}.jpg`} />
                     </Link>
                     <h4 className='text-center bg-white rounded-md'>{catDatum.name}</h4>

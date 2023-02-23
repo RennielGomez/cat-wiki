@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 
 function Search() {
-
-    const [inputBreed, setInputBreed] = useState();
 
     const catBreeds = ["Abyssinian", "Aegean", "American Bobtail", "American Curl", "American Shorthair", "American Wirehair", "Arabian Mau", "Australian Mist",
         "Balinese", "Bambino", "Bengal", "Birman", "Bombay", "British Longhair", "British Shorthair", "Burmese", "Burmilla",
@@ -23,32 +21,33 @@ function Search() {
         "Tonkinese", "Toyger", "Turkish Angora", "Turkish Van",
         "York Chocolate"
     ]
+    const [filteringResult, setFilteringResult] = useState(catBreeds);
+    const [searchKeyWord, setSearchKeyWord] = useState();
 
-    const [filteredBreeds, setFilteredBreeds] = useState();
-
-    function filterBreeds(event) {
-        const { value } = event.target;
-        setInputBreed(value);
-        setFilteredBreeds(() => {
-            return catBreeds.filter((catBreed) => {
-                if (catBreed.includes(inputBreed)) {
-                    return catBreed;
-                }
+    useEffect(() => {
+        setFilteringResult(() => {
+            catBreeds.filter((catBreed) => {
+                return catBreed.includes(searchKeyWord);
             })
         })
+    }, [searchKeyWord])
+
+    function filterBreeds(event) {
+        const value = event.target;
+        setSearchKeyWord(value);
     }
 
     return (
         <form autoComplete="off" >
             <div className="autocomplete" style={{ width: "300px" }}>
-                <input id="myInput" value={inputBreed} onChange={filterBreeds} type="text" name="catBreeds" placeholder="Enter Cat Breed" />
+                <input id="myInput" value={searchKeyWord} onChange={filterBreeds} type="text" name="catBreeds" placeholder="Enter Cat Breed" />
                 <div>
                     {
-                    //  filteredBreeds.filter((filteredBreed) => {
-                    //         return <div className='text-white'>{filteredBreed}</div>
-                    //     })    
+                        // filteringResult.map((filteredBreed, filterIndex) => {
+                        //     return <div key={filteredBreed + filterIndex} className='text-black bg-white h-8'>{filteredBreed}</div>
+                        // })
                     }
-                  
+
                 </div>
             </div>
             <button className='text-white bg-orange-500 p-3' type='submit'><SearchIcon /></button>
